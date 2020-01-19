@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebStore.Models.EmployeeModel>
+﻿@model IEnumerable<WebStore.Models.CarModel>
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,18 +8,17 @@
     {
         <tr>
             <td>@item.Id</td>
-            <td>@item.FirstName</td>
-            <td>@item.Patronymic</td>
-            <td>@item.SurName</td>
+            <td>@item.MarkName</td>
+            <td>@item.ModelName</td>
             @*<td>
                 <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
                 </td>*@
             <td>
-                @Html.ActionLink("info", "Details", new { id = item.Id })
+                @Html.ActionLink("About car", "Details", new { id = item.Id })
             </td>
         </tr>
     }
 </table>
 
 
-@Html.ActionLink("List of Cars", "Index", "car")
+@Html.ActionLink("List of Employers", "Index", "home")

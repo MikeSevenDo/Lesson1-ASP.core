@@ -31,8 +31,6 @@ namespace WebStore.Controllers
         };
 
 
-
-
         /// <summary>
         /// Get "home/index"
         /// </summary>
