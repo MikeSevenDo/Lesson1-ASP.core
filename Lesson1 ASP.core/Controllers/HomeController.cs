@@ -13,19 +13,19 @@ namespace WebStore.Controllers
         {
             new EmployeeModel
             {
-                Id = 1, 
-                Age = 22, 
-                FirstName = "Миша", 
-                SurName = "Семиделихин1", 
-                Patronymic = "Сергеевич", 
+                Id = 1,
+                Age = 22,
+                FirstName = "Миша",
+                SurName = "Семиделихин1",
+                Patronymic = "Сергеевич",
                 Position = "Человек"
             },
             new EmployeeModel{
-                Id = 2, 
-                Age = 25, 
-                FirstName = "Миша2", 
-                SurName = "Семиделихин2", 
-                Patronymic = "Сергеевич", 
+                Id = 2,
+                Age = 25,
+                FirstName = "Миша2",
+                SurName = "Семиделихин2",
+                Patronymic = "Сергеевич",
                 Position = "Человек"
             }
         };
@@ -40,6 +40,17 @@ namespace WebStore.Controllers
         public IActionResult Index()
         {
             return View(employees);
+        }
+        /// <summary>
+        /// Get "home/details/{id}"
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Details(int id)
+        {
+            var employee = employees.FirstOrDefault(x => x.Id == id);
+            if (employee == null)
+                return NotFound();
+            return View(employee);
         }
     }
 }
