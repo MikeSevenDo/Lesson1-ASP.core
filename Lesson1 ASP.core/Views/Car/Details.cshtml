@@ -1,0 +1,32 @@
+﻿@model WebStore.Models.CarModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td>Марка:</td>
+        <td>@Model.MarkName</td>
+    </tr>
+    <tr>
+        <td>Модель:</td>
+        <td>@Model.ModelName</td>
+    </tr>
+    <tr>
+        <td>Дата выхода:</td>
+        <td>@Model.GetDate()</td>
+    </tr>
+    <tr>
+        <td>Максимальная скорость:</td>
+        <td>@Model.MaxSpeed</td>
+    </tr>
+    <tr>
+        @Html.ActionLink("Back to Cars", "Index")
+    </tr>
+</table>

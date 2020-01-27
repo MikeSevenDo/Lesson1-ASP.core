@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebStore.Models.EmployeeModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.FirstName</td>
+            <td>@item.Patronymic</td>
+            <td>@item.SurName</td>
+            @*<td>
+                <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
+                </td>*@
+            <td>
+                @Html.ActionLink("info", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
+
+@Html.ActionLink("List of Cars", "Index", "car")
